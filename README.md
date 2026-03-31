@@ -1,1 +1,1 @@
-Just an ordinary student tring to learn cs
+Just an ordinary student trying to learn cs
