@@ -1,0 +1,227 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 头部样式 */
+header {
+    background: linear-gradient(to bottom, #0196f9, #00c3ff);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+    width: 75%;
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 60px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* 主要内容样式 */
+main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 2px solid #ff9900;
+    padding-bottom: 5px;
+}
+
+/* 视频样式 */
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+img {
+    width: 100%;
+    height: 250px;
+}
+
+/* 评分滑块样式 */
+.rating-container {
+    margin: 10px 0 15px 0;
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+article {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+article h3 {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+article p {
+    color: #666;
+}
+
+/* 侧边栏样式 */
+aside {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+aside h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+aside ul li a:hover {
+    color: #007bff;
+}
+
+/* 表单样式 */
+form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+    margin-top: 0;
+}
+
+form input[type="submit"] {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #ffcc00;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form input[type="checkbox"]+label {
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 5px;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}

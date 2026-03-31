@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP-173 - SCP基金会</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .scp-box {
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+
+        .scp-header {
+            background-color: #8b0000;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .scp-header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .scp-content {
+            padding: 20px;
+        }
+
+        .scp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .scp-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .scp-table td:first-child {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            width: 150px;
+        }
+
+        .object-class-euclid {
+            color: #daa520;
+            font-weight: bold;
+        }
+
+        .object-class-keter {
+            color: #8b0000;
+            font-weight: bold;
+        }
+
+        .object-class-safe {
+            color: #006400;
+            font-weight: bold;
+        }
+
+        .special-containment,
+        .description,
+        .addendum {
+            margin-bottom: 25px;
+        }
+
+        .special-containment h2,
+        .description h2,
+        .addendum h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .redacted {
+            background-color: #333;
+            color: #333;
+            padding: 0 5px;
+        }
+
+        .redacted:hover {
+            color: #fff;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #8b0000;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #5c0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div class="logo">
+                    <img src="scp-logo-en.png" alt="SCP Logo">
+                </div>
+                <div class="site-title">
+                    <h1>SCP基金会</h1>
+                    <h2>中国分部</h2>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="#" class="active">SCP系列</a></li>
+                    <li><a href="#">故事中心</a></li>
+                    <li><a href="#">GOI格式</a></li>
+                    <li><a href="#">档案库</a></li>
+                    <li><a href="#">艺术创作</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="sidebar-box">
+                    <h3>导航</h3>
+                    <ul>
+                        <li><a href="index.html">返回首页</a></li>
+                        <li><a href="#">最近创建</a></li>
+                        <li><a href="#">最近更改</a></li>
+                        <li><a href="#">随机页面</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-box">
+                    <h3>SCP系列</h3>
+                    <ul>
+                        <li><a href="#">SCP-001 - SCP-999</a></li>
+                        <li><a href="#">SCP-1000 - SCP-1999</a></li>
+                        <li><a href="#">SCP-2000 - SCP-2999</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main class="content">
+                <div class="scp-box">
+                    <div class="scp-header">
+                        <h1>SCP-173</h1>
+                        <p>项目编号：SCP-173</p>
+                    </div>
+                    <div class="scp-content">
+                        <table class="scp-table">
+                            <tr>
+                                <td>项目编号</td>
+                                <td>SCP-173</td>
+                            </tr>
+                            <tr>
+                                <td>对象等级</td>
+                                <td><span class="object-class-euclid">Euclid</span></td>
+                            </tr>
+                            <tr>
+                                <td>其他名称</td>
+                                <td>雕像；最初之作</td>
+                            </tr>
+                        </table>
+
+                        <div class="special-containment">
+                            <h2>特殊收容措施</h2>
+                            <p>项目SCP-173应随时保存于一个有锁的收容室内。必须时刻有不少于两人的人员直接目视SCP-173，直到收容室重新上锁并完全密封。</p>
+                            <p>进入SCP-173收容室的人员必须在进入前通知控制室，并确认有至少一名额外人员陪同他们进入。在任何情况下，都不得让任何人员单独与SCP-173处于同一空间。</p>
+                            <p>收容室必须每周清洁并消毒。当清洁人员进行清洁工作时，必须维持至少两名人员与SCP-173进行直接视线接触。</p>
+                        </div>
+
+                        <div class="description">
+                            <h2>描述</h2>
+                            <p>SCP-173是由混凝土和钢筋建造的，并涂有Krylon牌喷漆的痕迹。SCP-173于1993年被移动到Site-19。其起源和创造者至今未知。</p>
+                            <p>SCP-173会在未被直接目视时移动。SCP-173能够以极高的速度移动，且会攻击其范围内的所有生物。它攻击的方式通常是折断目标的颈骨，或是通过勒杀。</p>
+                            <p>据报告，SCP-173的收容室内经常会出现来自眼睛、鼻子和嘴巴的血液和排泄物的飞溅，这些物质的来源未知。必须每周从表面清除这些物质。</p>
+                            <p>由于SCP-173的性质，建议对其进行定期检查以防止可能的突破。</p>
+                        </div>
+
+                        <div class="addendum">
+                            <h2>附录173-A</h2>
+                            <p>在最初的收容过程中，由于<span class="redacted">██████████</span>的失误，导致了██名人员的死亡。此后，制定了当前的收容措施。</p>
+                            <p>所有新员工在分配到Site-19前必须阅读本文件。</p>
+                        </div>
+
+                        <a href="index.html" class="back-link">← 返回首页</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>© 2026 SCP基金会 - 中国分部</p>
+                <p>除非另有声明，本网站内容均采用 CC BY-SA 3.0 授权</p>
+                <p class="footer-note">本网站为粉丝创作，与实际的任何组织、机构或个人无关</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

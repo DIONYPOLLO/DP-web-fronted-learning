@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3实验课</title>
+    <!-- 要求：在这里引入外部样式表styles.css -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <div id="header">
+        <h1>CSS3基础样式与选择器实验</h1>
+        <!-- 导航链接 -->
+        <nav>
+            <a href="https://www.baidu.com" target="_blank">首页</a>
+            <a href="https://www.w3school.com.cn" target="_blank" class="nav-active">CSS教程</a>
+            <a href="test.pdf" target="_blank">实验文档</a>
+            <a href="">关于我们</a>
+        </nav>
+    </div>
+
+    <!-- 主体内容 -->
+    <div class="container">
+        <!-- 左侧内容 -->
+        <section class="content-left">
+            <h2>实验介绍</h2>
+            <p class="intro-text">本次实验将综合运用CSS3的基础样式和各类选择器，完成网页的视觉美化与布局。需要掌握字体、文本、背景、盒模型的设置，以及不同选择器的精准定位。</p>
+            <p>CSS3是层叠样式表的最新标准，实现了HTML结构与样式的分离，让网页开发更高效、易维护。学好CSS3，是成为前端开发工程师的基础。</p>
+            <!-- 列表 -->
+            <ul class="exp-list">
+                <li>掌握CSS3外部样式表的引入</li>
+                <li>熟练设置字体、文本、背景样式</li>
+                <li>理解盒模型的核心属性</li>
+                <li>灵活使用各类选择器定位元素</li>
+                <li>掌握选择器优先级规则</li>
+            </ul>
+        </section>
+
+        <!-- 右侧内容 -->
+        <section class="content-right">
+            <h2>实验操作</h2>
+            <!-- 输入框 -->
+            <div class="input-group">
+                <label for="user-name">用户名：</label>
+                <input type="text" id="user-name" placeholder="请输入用户名">
+                <label for="user-pwd">密&nbsp;&nbsp;码：</label>
+                <input type="password" id="user-pwd" placeholder="请输入密码">
+                <input type="button" value="提交" disabled>
+                <input type="button" value="重置">
+            </div>
+            <!-- 卡片 -->
+            <div class="card" id="card1">
+                <h3>基础样式</h3>
+                <p>字体、文本、背景、盒模型是CSS3的基础，是构建网页视觉的基石。</p>
+            </div>
+            <div class="card">
+                <h3>选择器体系</h3>
+                <p>选择器是CSS的灵魂，精准定位元素才能实现样式的灵活控制。</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 底部区域 -->
+    <div id="footer">
+        <p>©2025 CSS3实验课 版权所有</p>
+    </div>
+</body>
+
+</html>
