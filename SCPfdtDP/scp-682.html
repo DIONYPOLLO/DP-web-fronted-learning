@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP-682 - SCP基金会</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .scp-box {
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+
+        .scp-header {
+            background-color: #8b0000;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .scp-header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .scp-content {
+            padding: 20px;
+        }
+
+        .scp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .scp-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .scp-table td:first-child {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            width: 150px;
+        }
+
+        .object-class-euclid {
+            color: #daa520;
+            font-weight: bold;
+        }
+
+        .object-class-keter {
+            color: #8b0000;
+            font-weight: bold;
+        }
+
+        .object-class-safe {
+            color: #006400;
+            font-weight: bold;
+        }
+
+        .special-containment,
+        .description,
+        .addendum {
+            margin-bottom: 25px;
+        }
+
+        .special-containment h2,
+        .description h2,
+        .addendum h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .redacted {
+            background-color: #333;
+            color: #333;
+            padding: 0 5px;
+        }
+
+        .redacted:hover {
+            color: #fff;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #8b0000;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #5c0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div class="logo">
+                    <img src="scp-logo-en.png" alt="SCP Logo">
+                </div>
+                <div class="site-title">
+                    <h1>SCP基金会</h1>
+                    <h2>DP分部</h2>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="#" class="active">SCP系列</a></li>
+                    <li><a href="#">故事中心</a></li>
+                    <li><a href="#">GOI格式</a></li>
+                    <li><a href="#">档案库</a></li>
+                    <li><a href="#">艺术创作</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="sidebar-box">
+                    <h3>导航</h3>
+                    <ul>
+                        <li><a href="index.html">返回首页</a></li>
+                        <li><a href="#">最近创建</a></li>
+                        <li><a href="#">最近更改</a></li>
+                        <li><a href="#">随机页面</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-box">
+                    <h3>SCP系列</h3>
+                    <ul>
+                        <li><a href="#">系列I 001-999</a></li>
+                        <li><a href="#">系列II 1000-1999</a></li>
+                        <li><a href="#">系列III 2000-2999</a></li>
+                        <li><a href="#">系列IV 3000-3999</a></li>
+                        <li><a href="#">系列V 4000-4999</a></li>
+                        <li><a href="#">系列VI 5000-5999</a></li>
+                        <li><a href="#">系列VII 6000-6999</a></li>
+                        <li><a href="#">系列VIII 7000-7999</a></li>
+                        <li><a href="#">系列IX 8000-8999</a></li>
+                        <li><a href="#">系列X 9000-9999</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main class="content">
+                <div class="scp-box">
+                    <div class="scp-header">
+                        <h1>SCP-682</h1>
+                        <p>项目编号：SCP-682</p>
+                    </div>
+                    <div class="scp-content">
+                        <table class="scp-table">
+                            <tr>
+                                <td>项目编号</td>
+                                <td>SCP-682</td>
+                            </tr>
+                            <tr>
+                                <td>对象等级</td>
+                                <td><span class="object-class-keter">Keter</span></td>
+                            </tr>
+                            <tr>
+                                <td>其他名称</td>
+                                <td>不灭孽蜥</td>
+                            </tr>
+                        </table>
+
+                        <div class="special-containment">
+                            <h2>特殊收容措施</h2>
+
+                            <p>SCP-682必须被尽快消灭。目前，SCP团队无法摧毁SCP-682，只能对它造成大量物理伤害。SCP-682需被收容在5m x 5m x
+                                5m的容器中，其中25cm厚的加固抗酸钢板内衬在所有内壁上。收容容器需以盐酸填满，直到SCP-682完全沉没且无力反抗。如果SCP-682试图移动、说话或破坏收容措施，必须快速做出反应并且视情况以全力应对。
+                            </p>
+                            <p>为避免激怒SCP-682，禁止员工与其进行交谈。任何尝试与SCP-682交流的未授权人员将被制止并强制带走。</p>
+                            <p>由于SCP-682经常尝试破坏收容设施，难以收容与无力化，以及具有使基金会曝光的高度威胁，它被收容在[已编辑]站点。基金会将尽力使用资源以确保该地点五十（50）千米内无人开发。
+                            </p>
+
+                        </div>
+
+                        <div class="description">
+                            <h2>描述</h2>
+
+                            <p>SCP-682是一体型巨大、起源未知的爬行类生物。它表现出极高的智能，在它与SCP-079有限的接触时间内，观察到它们之间进行了非常复杂的交流。SCP-682表露出对所有生命的憎恶，收容期间与它的数次交流印证了这一点。（参见附录682-B）。
+                            </p>
+                            <p>SCP-682一直被观察到具有极高的力量、速度和迅速反应能力，不过具体程度会随其形态而改变。SCP-682物理躯体的生长和改变非常之快，通过进食或蜕皮，SCP-682能够使体型增大或减小。SCP-682可以从它摄取的任何物质中获得能量，无论是有机物还是无机物。SCP-682的消化似乎由鼻孔内的过滤鳃辅助，该鳃能吸收任何溶液中的有用物质，使其在被收容于酸液中时能够持续再生。SCP-682的再生能力和适应能力非常惊人，且SCP-682在87%的身体被毁或腐烂的情况下仍然可以移动和交流。
+                            </p>
+
+                        </div>
+
+                        <a href="index.html" class="back-link">← 返回首页</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>© 2026 SCP基金会 - 中国分部</p>
+                <p>除非另有声明，本网站内容均采用 CC BY-SA 3.0 授权</p>
+                <p class="footer-note">本网站为粉丝创作，与实际的任何组织、机构或个人无关</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

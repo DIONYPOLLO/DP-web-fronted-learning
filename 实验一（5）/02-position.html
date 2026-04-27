@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>实验2：定位属性验证</title>
+    <style>
+        .parent {
+            width: 400px;
+            height: 300px;
+            background: #e3f2fd;
+            border: 2px solid #0e75dc;
+            margin: 20px;
+            /* �开启后子绝开启后子绝将相对于父容器定位 */
+            position: relative;
+        }
+
+        .relative-box {
+            width: 100px;
+            height: 100px;
+            background: #4caf50;
+            color: white;
+            /* 相对定位：相对于自身原位置偏移，不脱离文档流 */
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        .absolute-box {
+            width: 100px;
+            height: 100px;
+            background: #f44336;
+            color: white;
+            /* 绝对定位：脱离文档流，相对于最近的已定位父元素 */
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .fixed-box {
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: #ff9800;
+            color: white;
+            /* 固定定位：脱离文档流，相对于浏览器窗口 */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        父容器（relative）
+        <div class="relative-box">relative</div>
+        <div class="absolute-box">absolute</div>
+    </div>
+    <div class="fixed-box">fixed</div>
+
+    <!-- 思考题 -->
+    <div style="margin-top: 20px; color: #666;">
+        1. 取消父容器的position: relative，absolute-box会相对于谁定位？<br>
+        2. fixed-box是否会随页面滚动移动？
+    </div>
+</body>
+
+</html>

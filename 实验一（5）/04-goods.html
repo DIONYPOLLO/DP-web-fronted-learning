@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>实验4：子绝父相 - 商品卡片实战</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 父容器：相对定位（定位参考） */
+        .goods-card {
+            position: relative;
+            width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .goods-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* 子元素1：热销角标（绝对定位） */
+        .hot-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px 10px;
+            background: #ff3c00;
+            color: white;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        /* 子元素2：优惠券角标（绝对定位） */
+        .coupon-tag {
+            position: absolute;
+            bottom: 15px;
+            right: 10px;
+            padding: 4px 8px;
+            background: #ff9800;
+            color: white;
+            font-size: 11px;
+            border-radius: 10px;
+        }
+
+        .goods-info {
+            padding: 15px;
+        }
+
+        .goods-title {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 20px;
+            color: #ff3c00;
+            font-weight: bold;
+        }
+
+        /* 子元素3：新品角标（绝对定位） */
+        .new-tag {
+            position: absolute;
+            top: 90px;
+            left: 135px;
+            padding: 4px 8px;
+            background: #007bff;
+            color: white;
+            font-size: 11px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="goods-card">
+        <div class="new-tag">新品</div>
+        <!-- 热销角标 -->
+        <div class="hot-tag">热销</div>
+        <!-- 优惠券角标 -->
+        <div class="coupon-tag">满100减20</div>
+        <!-- 商品图片 -->
+        <img src="https://picsum.photos/300/200" class="goods-img" alt="商品图">
+        <!-- 商品信息 -->
+        <div class="goods-info">
+            <div class="goods-title">2026新款休闲鞋</div>
+            <div class="price">¥199</div>
+        </div>
+    </div>
+
+    <!-- 实验任务 -->
+    <div style="margin: 20px; color: #666;">
+        1. 将hot-tag移到左上角（top:10px; left:10px）；<br>
+        2. 将coupon-tag移到右下角（bottom:15px; right:10px）；<br>
+        3. 添加一个“新品”角标，定位在图片中央。
+    </div>
+</body>
+
+</html>

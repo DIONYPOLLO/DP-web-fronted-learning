@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS3 2D/3D转换、过渡与动画 完整教程</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+    body {
+      background: #f5f7fa;
+      padding: 20px;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+    h2 {
+      color: #2d8cf0;
+      margin: 40px 0 20px;
+      border-left: 5px solid #2d8cf0;
+      padding-left: 12px;
+    }
+    h3 {
+      color: #444;
+      margin: 20px 0 10px;
+      font-size: 18px;
+    }
+    .demo-box {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .demo-view {
+      border: 1px solid #eee;
+      padding: 40px;
+      margin-bottom: 15px;
+      background: #fcfcfc;
+      border-radius: 6px;
+      min-height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    pre {
+      background: #282c34;
+      color: #abb2bf;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .demo-item {
+      background: #2d8cf0;
+      color: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 120px;
+    }
+    .demo-item-3d {
+      background: #57a3f3;
+      color: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+      width: 120px;
+    }
+    p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+    .tip {
+      color: #ff7d00;
+      font-weight: bold;
+    }
+    /* 3D容器样式 */
+    .perspective-container {
+      perspective: 500px;
+    }
+    /* 动画样式 */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    .spin-animation {
+      animation: spin 2s linear infinite;
+    }
+    .bounce-animation {
+      animation: bounce 1s ease infinite;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>CSS3 2D/3D转换、过渡与动画 完整教程</h1>
+  <p style="text-align:center; color:#666; margin-bottom:40px;">
+    从基础到实战，带你掌握CSS3最强大的视觉特效能力
+  </p>
+
+  <!-- ====================== 1. 2D 转换 ====================== -->
+  <h2>一、2D 转换（transform）</h2>
+  <p>transform 属性允许你旋转、缩放、倾斜或平移元素，是CSS3最基础的视觉变换能力。</p>
+  <p class="tip">💡 鼠标移到元素上查看效果！</p>
+
+  <div class="demo-box">
+    <h3>1.1 translate：平移（移动元素）</h3>
+    <div class="demo-view">
+      <div class="demo-item" id="trans-demo">
+        hover我平移
+      </div>
+    </div>
+<pre>
+/* 平移：把元素从当前位置移动 */
+#trans-demo:hover {
+  /* x轴向右移动50px，y轴向下移动10px */
+  transform: translate(50px, 10px);
+  
+  /* 也可以单独写：
+  transform: translateX(50px);  // 只X轴
+  transform: translateY(10px);  // 只Y轴
+  */
+}
+</pre>
+  </div>
+
+  <div class="demo-box">
+    <h3>1.2 rotate：旋转</h3>
+    <div class="demo-view">
+      <div class="demo-item" id="rotate-demo">
+        hover我旋转
+      </div>
+    </div>
+<pre>
+/* 旋转：让元素顺时针旋转指定角度 */
+#rotate-demo:hover {
+  /* 顺时针旋转45度 */
+  transform: rotate(45deg);
+  
+  /* 负数就是逆时针：
+  transform: rotate(-30deg);
+  */
+}
+</pre>
+  </div>
+
+  <div class="demo-box">
+    <h3>1.3 scale：缩放</h3>
+    <div class="demo-view">
+      <div class="demo-item" id="scale-demo">
+        hover我缩放
+      </div>
+    </div>
+<pre>
+/* 缩放：改变元素的大小 */
+#scale-demo:hover {
+  /* 宽高都放大到1.5倍 */
+  transform: scale(1.5);
+  
+  /* 也可以单独控制：
+  transform: scaleX(2);    // 宽度放大2倍
+  transform: scaleY(0.8);  // 高度缩小到0.8
+  */
+}
+</pre>
+  </div>
+
+  <div class="demo-box">
+    <h3>1.4 skew：倾斜</h3>
+    <div class="demo-view">
+      <div class="demo-item" id="skew-demo">
+        hover我倾斜
+      </div>
+    </div>
+<pre>
+/* 倾斜：让元素沿X/Y轴倾斜变形 */
+#skew-demo:hover {
+  /* X轴倾斜20度，Y轴倾斜10度 */
+  transform: skew(20deg, 10deg);
+}
+</pre>
+  </div>
+
+  <!-- ====================== 2. 3D 转换 ====================== -->
+  <h2>二、3D 转换</h2>
+  <p>3D转换让你可以在三维空间里变换元素，做出立体的视觉效果，需要配合 perspective（透视）来模拟人眼的3D效果。</p>
+  <p class="tip">💡 鼠标移到元素上查看3D效果！</p>
+
+  <div class="demo-box">
+    <h3>2.1 rotateX / rotateY：3D旋转</h3>
+    <div class="demo-view perspective-container">
+      <div class="demo-item-3d" id="rotatex-demo">
+        X轴翻转
+      </div>
+      <div class="demo-item-3d" id="rotatey-demo">
+        Y轴翻转
+      </div>
+    </div>
+<pre>
+/* 父容器必须加透视，才能看到3D效果！ */
+.perspective-container {
+  perspective: 500px;  /* 模拟人眼到屏幕的距离，越小透视越强 */
+}
+
+/* X轴旋转：上下翻转 */
+#rotatex-demo:hover {
+  transform: rotateX(60deg);
+}
+
+/* Y轴旋转：左右翻转 */
+#rotatey-demo:hover {
+  transform: rotateY(60deg);
+}
+</pre>
+  </div>
+
+  <div class="demo-box">
+    <h3>2.2 translate3d：3D平移</h3>
+    <div class="demo-view perspective-container">
+      <div class="demo-item-3d" id="translate3d-demo">
+        hover我Z轴移动
+      </div>
+    </div>
+<pre>
+/* 3D平移：可以控制Z轴（前后）的移动 */
+#translate3d-demo:hover {
+  /* X:0, Y:0, Z:50px → 向屏幕外移动50px，看起来变大了 */
+  transform: translate3d(0, 0, 50px);
+}
+</pre>
+  </div>
+
+  <!-- ====================== 3. 过渡（transition） ====================== -->
+  <h2>三、过渡（transition）</h2>
+  <p>过渡可以让CSS的属性变化变得平滑，而不是瞬间完成，是做交互动画的基础！</p>
+
+  <div class="demo-box">
+    <h3>3.1 基础过渡效果</h3>
+    <div class="demo-view">
+      <div class="demo-item" id="transition-demo">
+        hover看过渡
+      </div>
+    </div>
+<pre>
+/* 给元素添加过渡，让所有属性的变化都平滑 */
+#transition-demo {
+  /* 语法：transition: 属性 时长 速度曲线 延迟; */
+  transition: all 0.5s ease;
+}
+
+#transition-demo:hover {
+  background: #34d399;
+  transform: scale(1.2);
+  border-radius: 20px;
+}
+
+/* 常用速度曲线：
+   ease → 慢-快-慢（默认）
+   linear → 匀速
+   ease-in → 先慢后快
+   ease-out → 先快后慢
+   ease-in-out → 慢-快-慢
+*/
+</pre>
+  </div>
+
+  <!-- ====================== 4. 动画（animation） ====================== -->
+  <h2>四、动画（animation）</h2>
+  <p>动画比过渡更强大，你可以定义关键帧（@keyframes），实现更复杂、自动循环的动画效果！</p>
+
+  <div class="demo-box">
+    <h3>4.1 旋转加载动画</h3>
+    <div class="demo-view">
+      <div class="demo-item spin-animation" style="width:60px;height:60px;border-radius:50%;border:4px solid #eee;border-top-color:#2d8cf0;padding:0;">
+      </div>
+    </div>
+<pre>
+/* 1. 先定义关键帧：动画的每一帧状态 */
+@keyframes spin {
+  0% { transform: rotate(0deg); }    /* 开始状态 */
+  100% { transform: rotate(360deg); } /* 结束状态 */
+}
+
+/* 2. 给元素应用动画 */
+.spin-animation {
+  /* 语法：animation: 动画名 时长 速度曲线 延迟 次数 方向; */
+  animation: spin 1s linear infinite;
+  
+  /* infinite 代表无限循环 */
+}
+</pre>
+  </div>
+
+  <div class="demo-box">
+    <h3>4.2 弹跳动画</h3>
+    <div class="demo-view">
+      <div class="demo-item bounce-animation">
+        弹跳中...
+      </div>
+    </div>
+<pre>
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }  /* 开始和结束在原位 */
+  50% { transform: translateY(-20px); }   /* 中间向上跳20px */
+}
+
+.bounce-animation {
+  animation: bounce 1s ease infinite;
+}
+</pre>
+  </div>
+
+  <!-- ====================== 总结 ====================== -->
+  <h2>五、总结对比</h2>
+  <div class="demo-box">
+    <ul style="padding-left:20px; color:#333;">
+      <li><strong>transform</strong>：元素的变换，2D/3D都靠它，是基础能力</li>
+      <li><strong>transition</strong>：简单的状态过渡，适合hover等交互，自动触发</li>
+      <li><strong>animation</strong>：复杂的关键帧动画，支持循环、多阶段，自动播放</li>
+      <li>三者可以搭配使用：用 transform 做变换，用 transition/animation 让它动起来！</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+// 给所有demo绑定hover效果
+document.getElementById('trans-demo').addEventListener('mouseover', function() {
+  this.style.transform = 'translate(50px, 10px)';
+});
+document.getElementById('trans-demo').addEventListener('mouseout', function() {
+  this.style.transform = 'none';
+});
+
+document.getElementById('rotate-demo').addEventListener('mouseover', function() {
+  this.style.transform = 'rotate(45deg)';
+});
+document.getElementById('rotate-demo').addEventListener('mouseout', function() {
+  this.style.transform = 'none';
+});
+
+document.getElementById('scale-demo').addEventListener('mouseover', function() {
+  this.style.transform = 'scale(1.5)';
+});
+document.getElementById('scale-demo').addEventListener('mouseout', function() {
+  this.style.transform = 'none';
+});
+
+document.getElementById('skew-demo').addEventListener('mouseover', function() {
+  this.style.transform = 'skew(20deg, 10deg)';
+});
+document.getElementById('skew-demo').addEventListener('mouseout', function() {
+  this.style.transform = 'none';
+});
+
+document.getElementById('rotatex-demo').addEventListener('mouseover', function() {
+  this.style.transform = 'rotateX(60deg)';
+});
+document.getElementById('rotatex-demo').addEventListener('mouseout', function() {
+  this.style.transform = 'none';
+});
+
+document.getElementById('rotatey-demo').addEventListener('mouseover', function() {
+  this.style.transform = 'rotateY(60deg)';
+});
+document.getElementById('rotatey-demo').addEventListener('mouseout', function() {
+  this.style.transform = 'none';
+});
+
+document.getElementById('translate3d-demo').addEventListener('mouseover', function() {
+  this.style.transform = 'translate3d(0,0,50px)';
+});
+document.getElementById('translate3d-demo').addEventListener('mouseout', function() {
+  this.style.transform = 'none';
+});
+
+document.getElementById('transition-demo').addEventListener('mouseover', function() {
+  this.style.background = '#34d399';
+  this.style.transform = 'scale(1.2)';
+  this.style.borderRadius = '20px';
+});
+document.getElementById('transition-demo').addEventListener('mouseout', function() {
+  this.style.background = '#2d8cf0';
+  this.style.transform = 'none';
+  this.style.borderRadius = '6px';
+});
+</script>
+</body>
+</html>

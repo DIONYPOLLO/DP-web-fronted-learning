@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>实验1：display属性验证</title>
+    <style>
+        * {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        /* 块级元素：独占一行，可设宽高 */
+        .block-box {
+            display: block;
+            /* 尝试改为none/inline/inline-block */
+            width: 150px;
+            height: 50px;
+            background: #e3f2fd;
+            border: 1px solid #1976d2;
+        }
+
+        /* 行内元素：不独占一行，不可设宽高 */
+        .inline-box {
+            display: inline;
+            /* 尝试改为block/inline-block */
+            width: 150px;
+            /* 观察是否生效 */
+            height: 50px;
+            /* 观察是否生效 */
+            background: #ffebee;
+            border: 1px solid #f44336;
+        }
+
+        /* 行内块元素：不独占一行，可设宽高 */
+        .inline-block-box {
+            display: inline-block;
+            /* 尝试改为block/inline */
+            width: 150px;
+            height: 50px;
+            background: #fff3e0;
+            border: 1px solid #ff9800;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>display属性对比</h3>
+    <div class="block-box">block元素</div>
+    <div class="block-box">block元素2</div>
+
+    <span class="inline-box">inline元素</span>
+    <span class="inline-box">inline元素2</span>
+
+    <span class="inline-block-box">inline-block元素</span>
+    <span class="inline-block-box">inline-block元素2</span>
+
+    <!-- 思考题 -->
+    <div style="margin-top: 20px; color: #666;">
+        1. inline元素设置width/height是否生效？<br>
+        2. inline-block为何能既并排又设置宽高？
+    </div>
+</body>
+
+</html>

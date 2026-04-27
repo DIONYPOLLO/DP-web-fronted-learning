@@ -1,0 +1,424 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.unmargined {
+    margin: 0;
+    padding: 0;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    background-color: #8b0000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a0c0c 45%, #8b0000 100%);
+    position: relative;
+}
+
+/* 用于搭建标题部分的背景，但是不会还原原版的噪点*/
+
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 0 25px;
+}
+
+.logo img {
+    padding-left: 25px;
+    height: 100px;
+    width: auto;
+    display: block;
+}
+
+.site-title h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    color: #eee;
+    font-family: BauhausLTDemi, Simhei, Arial, sans-serif;
+    font-size: 300%;
+    text-decoration: none;
+    text-shadow: 3px 3px 5px #000;
+    letter-spacing: 0.9px;
+}
+
+.site-title h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+    opacity: 0.9;
+    color: #8b0000;
+}
+
+.main-nav {
+    background-color: #333;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-nav li {
+    border-right: 1px solid #555;
+}
+
+.main-nav a {
+    display: block;
+    padding: 5px 30px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background-color: #8b0000;
+}
+
+.main-content {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.sidebar-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.sidebar-box h3 {
+    background-color: #8b0000;
+    color: #fff;
+    padding: 8px 12px;
+    margin: -15px -15px 15px -15px;
+    font-size: 1em;
+}
+
+.sidebar-box ul {
+    list-style: none;
+}
+
+.sidebar-box li {
+    margin-bottom: 8px;
+}
+
+.sidebar-box a {
+    color: #8b0000;
+    text-decoration: none;
+}
+
+.sidebar-box a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex: 1;
+}
+
+.content-panel {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 0.80em;
+    color: #333;
+    border: solid 1px #888880;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.1);
+    background: #fcfdfb;
+    text-align: center;
+    max-width: 100%;
+    clear: both;
+
+}
+
+.welcome-box {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 1.1em;
+    color: #333;
+    border: solid 1px #888880;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.1);
+    background: #fcfdfb;
+    text-align: center;
+    max-width: 100%;
+    clear: both;
+}
+
+.welcome-box h3 {
+    color: #8b0000;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.warning {
+    font-weight: bold;
+    color: #8b0000;
+    margin-top: 15px;
+}
+
+
+.scp-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.scp-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.scp-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #8b0000;
+}
+
+.scp-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: #8b0000;
+}
+
+/* 用translate实现了悬停时的浮动效果*/
+
+.scp-item h4 {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.scp-item p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.scp-item .discription {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.scp-item .discription p {
+    font-style: italic;
+    color: #666;
+}
+
+/* 描述的斜体和淡色 */
+
+.scp-item a {
+    color: #8b0000;
+    text-decoration: none;
+}
+
+
+.scp-item a:hover {
+    text-decoration: underline;
+}
+
+.featured-section,
+.news-section {
+    margin-bottom: 30px;
+}
+
+.featured-section h3,
+.news-section h3 {
+    border-bottom: 2px solid #8b0000;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    color: #8b0000;
+}
+
+/* 最新消息 */
+
+.news-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #8b0000;
+}
+
+/* 创造了新闻项的左侧深红色边框 */
+
+.news-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: #8b0000;
+}
+
+/* 实现浮动 */
+
+.news-item {
+    background-color: #f9f9f9;
+    border-left: 4px solid #8b0000;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.news-item h4 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.news-item a {
+    color: #8b0000;
+    text-decoration: none;
+}
+
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+
+.news-date {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.register-section {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.register-section h3 {
+    border-bottom: 2px solid #8b0000;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    color: #8b0000;
+}
+
+form {
+    width: 100%;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #8b0000;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
+}
+
+.radio-group,
+.checkbox-group {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.radio-group input,
+.checkbox-group input {
+    width: auto;
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+.radio-group label,
+.checkbox-group label {
+    display: inline-block;
+    margin-top: 0;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+form input[type="submit"] {
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #660000;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content p {
+    margin-bottom: 8px;
+}
+
+.footer-note {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* 原站此处有media的代码构建，用来实现响应式布局，我没写了*/
