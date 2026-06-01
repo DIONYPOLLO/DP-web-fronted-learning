@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script>
+let arr = ['Apple', 'Banana', 'Cherry', 'Date'];
+
+console.log('=== for ===');
+for (let i = 0; i < arr.length; i++) {
+  console.log(i, arr[i]);
+  if (arr[i] === 'Banana') break;
+}
+
+console.log('=== for...in ===');
+for (let k in arr) {
+  console.log(k, typeof k, arr[k]);
+}
+
+console.log('=== forEach ===');
+arr.forEach((v, i) => {
+  console.log(i, v);
+  if (v === 'Banana') return;
+});
+
+console.log('=== for...of ===');
+for (let v of arr) {
+  if (v === 'Banana') continue;
+  console.log(v);
+}
+</script>
+</html>
